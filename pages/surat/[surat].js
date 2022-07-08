@@ -9,7 +9,6 @@ export default function Surat({surat}) {
     const [dataQuran, setDataQuran] = useState({})
     const [ayat, setAyat] = useState([])
     const [seeAll, setSeeAll] = useState(false)
-
     
     const getSurah = useCallback(
         async () => {

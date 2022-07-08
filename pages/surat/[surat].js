@@ -1,6 +1,6 @@
 import axios from "axios"
 import Head from "next/head"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Layout from "../component/layout/layout"
 import styles from './surat.module.css'
 
@@ -10,7 +10,9 @@ export default function Surat({surat}) {
     const [ayat, setAyat] = useState([])
     const [seeAll, setSeeAll] = useState(false)
 
-    const getSurah = async function() {
+    
+    const getSurah = useCallback(
+        async () => {
             await axios.get("https://equran.id/api/surat/" + surat)
             .then( resp => {
                 let response = resp.data
@@ -19,7 +21,8 @@ export default function Surat({surat}) {
             }) .catch( err => {
                 console.log(err)
             })
-    }
+        }
+    )
 
     const suratAudio = () => {
         let id = ""

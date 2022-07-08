@@ -1,0 +1,82 @@
+.atas {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.header__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 80px;
+    padding: 10px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.header {
+    font-size: 30px;
+}
+
+.active {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: var(--grey-dark);
+
+}
+
+.nActive {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--grey-dark);
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 120px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.button {
+    width: 100%;
+    font-weight: bold;
+    background-color: #634AB7;
+    height: 50px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio {
+    width: 100%;
+    margin: auto;
+}
+
+.cardayat {
+    width: 90%;
+    border-radius: 10px;
+    margin: 40px auto;
+    background-color: var(--grey-dark);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.ar {
+    font-family: var(--nask);
+    text-align: right;
+    direction: rtl;
+    font-size: 20px;
+}
+
+.idn {
+    font-size: 11px;
+}
+
+.tr {
+    font-size: 11px;
+    margin: 10px 0px;
+}

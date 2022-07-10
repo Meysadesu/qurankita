@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Layout from './component/layout/layout'
-import styles from './index.module.css'
 
 export default function Home() {
 
@@ -24,14 +23,20 @@ export default function Home() {
 			<Head>
 				<title>Qurankita - Media quran online</title>
 			</Head>
-			<div id='container'
-				 className={styles.container}>
+			<div className="hidden md:flex md:w-[100vw] md:h-[100vh] md:justify-center md:items-center md:font-bold ">
+				<p className="font-popins text-[70px]">
+					Tolong Buka versi Mobile
+				</p>
+			</div>
+			<div className="w-full m-auto p-[10px] box-border flex flex-wrap justify-around md:hidden">
 					{dataQuran.map((e, i) => {
-						return	<Link key={i} href={`/surat/${e.nomor}`}>
-							<a key={i} className={styles.body__card}>
-								<Card key={i} surat={e.nomor} arabic={e.nama} arti={e.arti} latin={e.nama_latin} tempat={e.tempat_turun}/>
-							</a>
-						</Link>
+						return (
+							<Link key={i} href={`/surat/${e.nomor}`}>
+								<a key={i} className="w-[350px] h-full my-[10px]">
+									<Card key={i} surat={e.nomor} arabic={e.nama} arti={e.arti} latin={e.nama_latin} tempat={e.tempat_turun}/>
+								</a>
+							</Link>
+						)
 					})}
 			</div>
 		</Layout>
@@ -40,17 +45,17 @@ export default function Home() {
 
 const Card = function({surat, arabic, arti, latin, tempat}) {
 	return (
-		<div id='card' className={styles.card}>
-			<div id='nomer' className={styles.nomer}>
+		<div className=" bg-dark-grey text-white p-[10px] box-border leading-[23px] flex text-[14px] justify-around items-center rounded-[10px]">
+			<div className="w-[60px] rounded-[10px] h-[60px] flex justify-center items-center bg-card">
 				{surat}
 			</div>
-			<div className={styles.information__quran}>
-				<div className={styles.info}>
+			<div className="w-[75%] justify-between flex h-full">
+				<div className="w-[60%]">
 					<p>{arti}</p>
-					<p id='latin'>{latin}</p>
-					<p id='turun'>tempat turun : {tempat}</p>
+					<p>{latin}</p>
+					<p>tempat turun : {tempat}</p>
 				</div>
-				<p id='arabic' className={styles.arabic}>{arabic}</p>
+				<p className="float-right font-nask mt-[10px] text-[25px]">{arabic}</p>
 			</div>
 		</div>
 	)

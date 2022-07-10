@@ -2,32 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	margin: 0;
 	padding: 0;
-	color: rgba(255, 255, 255, .9);
-	text-decoration: none;
-	font-family: arial;
 	clear: both;
 }
 
-:root {
-	--main: #23272A;
-	--grey-dark: #2C2F33;
-	--grey: #99AAB5;
-	--card: #3C4042;
-}
-
-:root {
-	--nask: 'Noto Naskh Arabic';
-	--arabic: 'Noto Sans Arabic';
-	--poppins : 'Poppins';
-}
-
 body {
-	background-color: var(--main);
+	background-color: #23272A;
+	color: white;
 }
 
 a {
+	text-decoration: none;
 	color: black;
 }

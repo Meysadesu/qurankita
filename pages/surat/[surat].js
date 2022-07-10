@@ -2,7 +2,6 @@ import axios from "axios"
 import Head from "next/head"
 import { useCallback, useEffect, useState } from "react"
 import Layout from "../component/layout/layout"
-import styles from './surat.module.css'
 
 export default function Surat({surat}) {
     
@@ -50,28 +49,28 @@ export default function Surat({surat}) {
             </Head>
             <Layout>
                 <div>
-                    <div className={styles.atas}>
-                        <div className={styles.header__container}>
-                            <div className={styles.info}>
+                    <div className="w-[90%] mx-auto mt-[10px] mb-[40px]">
+                        <div className="flex w-full justify-between h-[80px] p-[10px] items-center box-border">
+                            <div>
                                 <p>{dataQuran.nama_latin}</p>
-                                <p id="arti">{dataQuran.arti}</p>
+                                <p>{dataQuran.arti}</p>
                             </div>
-                            <p style={{ fontFamily: 'var(--nask)' }} className={styles.header}> {dataQuran.nama} </p>
+                            <p className="text-[30px] font-nask"> {dataQuran.nama} </p>
                         </div>
-                        <div className={(seeAll === true ? styles.active : styles.nActive)}>
+                        <div className={`${seeAll === true ? "h-full" : "h-[120px]"} w-full p-[10px] box-border rounded-[10px] text-[15px] mb-[20px] overflow-hidden bg-dark-grey`}>
                             <p dangerouslySetInnerHTML={{__html: dataQuran.deskripsi}}></p>
                         </div>
-                        <div onClick={() => setSeeAll(!seeAll)} className={styles.button}>Baca selengkapnya</div>
-                        <audio className={styles.audio} controls>
+                        <div onClick={() => setSeeAll(!seeAll)} className="w-full font-bold bg-violet h-[50px] rounded-[20px] mb-[20px] flex justify-center items-center">Baca selengkapnya</div>
+                        <audio className="w-full m-auto" controls>
                             <source src={`https://equran.id/content/audio/${suratAudio()}.mp3`}/>
                         </audio>
                     </div>
                     {ayat.map((e, i) => {
                         return (
-                            <div key={i} id="card" className={styles.cardayat}>
-                                <p  className={styles.ar}>{e.ar}</p>
-                                <p  dangerouslySetInnerHTML={{__html: e.tr}} className={styles.tr}></p>
-                                <p  className={styles.idn}>{e.idn}</p>
+                            <div key={i} id="card" className="w-[90%] rounded-[10px] my-[40px] mx-auto bg-dark-grey p-[10px] box-border">
+                                <p  className="font-nask text-right text-[20px]" dir="rtl">{e.ar}</p>
+                                <p  dangerouslySetInnerHTML={{__html: e.tr}} className="text-[11px] my-[10px]"></p>
+                                <p  className="text-[11px]">{e.idn}</p>
                             </div>
                         )
                     })}
